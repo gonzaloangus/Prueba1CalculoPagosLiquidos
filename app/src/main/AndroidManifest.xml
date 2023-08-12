@@ -13,11 +13,16 @@
         android:theme="@style/Theme.CalcularPagosLiquidos"
         tools:targetApi="31">
         <activity
-            android:name=".EmpleadoRegularActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="false" />
+            android:name=".Empleado"
+            android:exported="false"
+            android:label="@string/title_activity_empleado"
+            android:theme="@style/Theme.CalcularPagosLiquidos" />
         <activity
-            android:name=".EmpleadoHonorariosActivity"
+            android:name=".PantallaRegularActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".PantallaHonorariosActivity"
             android:exported="false"
             android:label="@string/title_activity_empleado_honorarios"
             android:theme="@style/Theme.CalcularPagosLiquidos" />

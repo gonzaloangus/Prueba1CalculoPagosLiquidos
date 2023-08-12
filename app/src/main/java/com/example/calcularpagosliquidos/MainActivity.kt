@@ -1,8 +1,6 @@
 package com.example.calcularpagosliquidos
 
-
-
-import  android.content.Intent
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,40 +17,54 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.calcularpagosliquidos.ui.theme.CalcularPagosLiquidosTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-        Empleado()
+            PantallaPrincipal()
         }
     }
 }
 
-@Preview
 @Composable
-fun Empleado(){
+fun PantallaPrincipal() {
     val contexto = LocalContext.current
     Column(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Top,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text(
+            text = "Calculo sueldo liquido",
+            style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold)
+        )
+        Spacer(modifier = Modifier.height(30.dp))
+
         Button(onClick = {
-            val intent = Intent(contexto, EmpleadoHonorariosActivity::class.java)
+            val intent = Intent(contexto, PantallaHonorariosActivity::class.java)
             contexto.startActivity(intent)
         }) {
-            Text("Empleado a Honorarios")
+            Text(
+                text= "Empleado a Honorarios",
+                style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold)
+            )
         }
-        Spacer(modifier =Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = {
-            val intent = Intent(contexto, EmpleadoRegularActivity::class.java)
+            val intent = Intent(contexto, PantallaRegularActivity::class.java)
             contexto.startActivity(intent)
         }) {
-            Text("Empleado Contratado")
+            Text(
+                text= "Empleado con Contrato",
+                style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold)
+            )
         }
     }
 }
